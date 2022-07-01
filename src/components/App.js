@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../assets/logo.png';
 import Banner from "./Banner";
 // import Cart from "./Cart";
+import Footer from "./Footer";
 import QuestionForm from "./QuestionForm";
 import ShoppingList from "./ShoppingList";
 
@@ -16,6 +17,7 @@ function App() {
       {/* <Cart /> */}
       <ShoppingList />
       <QuestionForm />
+      <Footer />
     </React.Fragment>
   )
 }
