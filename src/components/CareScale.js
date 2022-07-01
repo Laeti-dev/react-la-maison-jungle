@@ -4,12 +4,13 @@ import Water from '../assets/water.svg'
 const CareScale = ({ scaleValue, careType }) => {
   const range = [1,2,3]
 
-  let scaleType =
+  const scaleType =
     careType === "light" ? (
         <img src={Sun} alt='sun-icon' />
       ) : (
         <img src={Water} alt='water-icon' />
     )
+
 
   return (
     <div>
