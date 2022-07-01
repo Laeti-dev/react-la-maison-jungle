@@ -11,12 +11,19 @@ const CareScale = ({ scaleValue, careType }) => {
         <img src={Water} alt='water-icon' />
     )
 
+  const handleClick = (type) => {
+    if (type === "light"){
+      alert("Cette plante requiert de lumière")
+    } else {
+      alert("Cette plante requiert d'arrosage")
+    }
+  }
 
   return (
     <div>
       {range.map((rangeElement) =>
         scaleValue >= rangeElement ? (
-          <span key={rangeElement.toString()}>{scaleType}</span>
+          <span key={rangeElement.toString()} onClick={() => handleClick(rangeElement)}>{scaleType}</span>
         ) : null
       )}
     </div>
