@@ -1,13 +1,12 @@
 import '../styles/Banner.css'
 /* declare a variable logo to which we assign the image */
-import Recommendation from './Recommendation'
-
+/* import Recommendation from './Recommendation'*/
 const Banner = ({ children }) => {
 
   return (
     <div className='lmj-banner'>
       {children}
-      <Recommendation />
+{/*       <Recommendation /> */}
     </div>
 
 
