@@ -26,6 +26,9 @@ const Cart = () => {
         Ajouter
       </button>
       <p>Total : {monsteraPrice * cart}€</p>
+      <button onClick={() => updateCart(0)}>
+        Vider le panier
+      </button>
     </div>
   ) : (
     <div className='lmj-cart-closed'>
