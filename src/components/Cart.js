@@ -33,7 +33,7 @@ const Cart = () => {
         className='lmj-cart-toggle-button'
         onClick = { () => setIsOpen(true)}
       >
-        Ouvrir le panier
+        Ouvrir
       </button>
     </div>
   )
