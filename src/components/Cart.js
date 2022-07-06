@@ -2,10 +2,10 @@ import '../styles/Cart.css'
 /* state 1 = import useState from react */
 import { useState } from 'react'
 
-const Cart = () => {
+const Cart = ( {cart, updateCart}) => {
   /* state 2 = create the state cart, the actual value & the updateCart function [decomposition] */
   /* then set the initial value to 0 */
-  const [cart, updateCart] = useState(0);
+  /* const [cart, updateCart] = useState(0); */
   const [isOpen, setIsOpen] = useState(true);
 
   const monsteraPrice = 8
@@ -22,12 +22,9 @@ const Cart = () => {
       </button>
       <h2>Panier</h2>
       <div>Monstera : {monsteraPrice}€</div>
-      <button onClick = { () => updateCart(cart + 1)}>
-        Ajouter
-      </button>
       <p>Total : {monsteraPrice * cart}€</p>
       <button onClick={() => updateCart(0)}>
-        Vider le panier
+        Vider le
       </button>
     </div>
   ) : (
