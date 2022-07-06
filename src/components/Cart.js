@@ -7,10 +7,13 @@ const Cart = ( {cart, updateCart}) => {
   /* then set the initial value to 0 */
   /* const [cart, updateCart] = useState(0); */
   const [isOpen, setIsOpen] = useState(true);
+  const total = cart.reduce(
+    (acc, plantType) => acc + plantType.amount * plantType.price
+  )
 
-  const monsteraPrice = 8
+  /* const monsteraPrice = 8
   const lierrePrice = 10
-  const bouquetPrice = 15
+  const bouquetPrice = 15 */
 
   return isOpen ?(
     <div className='lmj-cart'>
@@ -21,8 +24,13 @@ const Cart = ( {cart, updateCart}) => {
           Fermer
       </button>
       <h2>Panier</h2>
-      <div>Monstera : {monsteraPrice}€</div>
-      <p>Total : {monsteraPrice * cart}€</p>
+      {/* <div>Monstera : {monsteraPrice}€</div> */}
+      {cart.map(({ name, price, amount }, index) => (
+        <div key={`${name}-${index}`}>
+        {name} {price}€ x {amount}
+        </div>
+      ))}
+      <p>Total : {total}€</p>
       <button onClick={() => updateCart(0)}>
         Vider le
       </button>
