@@ -8,14 +8,14 @@ const Cart = ( {cart, updateCart}) => {
   /* const [cart, updateCart] = useState(0); */
   const [isOpen, setIsOpen] = useState(true);
   const total = cart.reduce(
-    (acc, plantType) => acc + plantType.amount * plantType.price
+    (acc, plantType) => acc + plantType.amount * plantType.price, 0
   )
 
   /* const monsteraPrice = 8
   const lierrePrice = 10
   const bouquetPrice = 15 */
 
-  return isOpen ?(
+  return isOpen ? (
     <div className='lmj-cart'>
       <button
         className='lmj-toggle-button'
@@ -23,17 +23,24 @@ const Cart = ( {cart, updateCart}) => {
       >
           Fermer
       </button>
-      <h2>Panier</h2>
-      {/* <div>Monstera : {monsteraPrice}€</div> */}
-      {cart.map(({ name, price, amount }, index) => (
-        <div key={`${name}-${index}`}>
-        {name} {price}€ x {amount}
+      {cart.length > 0 ? (
+        <div>
+          <h2>Panier</h2>
+          <ul>
+            {cart.map(({ name, price, amount }, index) => (
+              <li key={`${name}-${index}`}>
+                {name} {price}€ x {amount}
+              </li>
+            ))}
+          </ul>
+          <p>Total : {total}€</p>
+          <button onClick={() => updateCart([])}>
+            Vider le panier
+          </button>
         </div>
-      ))}
-      <p>Total : {total}€</p>
-      <button onClick={() => updateCart(0)}>
-        Vider le
-      </button>
+      ) : (
+        <div>Votre panier est vide</div>
+      )}
     </div>
   ) : (
     <div className='lmj-cart-closed'>
