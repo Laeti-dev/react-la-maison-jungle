@@ -41,20 +41,22 @@ const ShoppingList = ( { cart, updateCart }) => {
         setActiveCategory = {setActiveCategory}
       />
       <ul className='lmj-plant-list'>
-        {plantList.map(({ id, cover, name, light, water, price }) => (
-          <div key={id}>
-            <PlantItem
-              cover={cover}
-              name={name}
-              light={light}
-              water={water}
-              price={price}
-            />
-            <button onClick={() => addToCart(name, price)}>
-              Ajouter
-            </button>
-          </div>
-        ))}
+        {plantList.map(({ id, cover, name, light, water, price, category }) =>
+          !activeCategory || activeCategory === category ? (
+            <div key={id}>
+              <PlantItem
+                cover={cover}
+                name={name}
+                light={light}
+                water={water}
+                price={price}
+              />
+              <button onClick={() => addToCart(name, price)}>
+                Ajouter
+              </button>
+            </div>
+          ) : null
+        )}
       </ul>
     </div>
   )
