@@ -13,14 +13,14 @@ const ShoppingList = ( { cart, updateCart }) => {
   )
 
   const addToCart = (name, price) => {
-    const currentPlantAdded = cart.find((plant) => plant.name === name )
-    if (currentPlantAdded) {
+    const addCurrentPlant = cart.find((plant) => plant.name === name )
+    if (addCurrentPlant) {
       const cartFilteredCurrentPlant = cart.filter(
         (plant) => plant.name !== name
       )
       updateCart([
         ...cartFilteredCurrentPlant,
-        { name, price, amount: currentPlantAdded.amount + 1 }
+        { name, price, amount: addCurrentPlant.amount + 1 }
       ])
     } else {
       updateCart([...cart, { name, price, amount: 1 }])

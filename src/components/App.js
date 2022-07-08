@@ -19,7 +19,7 @@ function App() {
       </Banner>
       <div className="lmj-layout-inner">
         <Cart  cart={cart} updateCart={updateCart} />
-        <ShoppingList />
+        <ShoppingList cart={cart} updateCart={updateCart} />
       </div>
       {/* <QuestionForm /> */}
       <Footer />
