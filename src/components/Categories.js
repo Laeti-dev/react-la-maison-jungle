@@ -1,6 +1,6 @@
 import "../styles/Categories.css"
 
-const Categories = ({ setActiveCategory, activeCategory, categories }) => {
+const Categories = ({ setActiveCategory, categories, activeCategory }) => {
   return (
     <div className='lmj-categories'>
       <select

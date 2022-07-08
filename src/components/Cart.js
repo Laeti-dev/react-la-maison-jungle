@@ -1,6 +1,6 @@
 import '../styles/Cart.css'
 /* state 1 = import useState from react */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Cart = ( {cart, updateCart}) => {
   /* state 2 = create the state cart, the actual value & the updateCart function [decomposition] */
@@ -11,6 +11,13 @@ const Cart = ( {cart, updateCart}) => {
     (acc, plantType) => acc + plantType.amount * plantType.price, 0
   )
 
+  useEffect(() => {
+    document.title = `LMJ: ${total}€ d'achats`
+  }, [total])
+
+  /* useEffect (() => {
+    alert(`J'aurai ${total}€ à payer 💸`)
+  }, [total]) */
   /* const monsteraPrice = 8
   const lierrePrice = 10
   const bouquetPrice = 15 */

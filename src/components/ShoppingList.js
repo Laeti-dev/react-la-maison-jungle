@@ -4,7 +4,7 @@ import PlantItem from './PlantItem'
 import Categories from './Categories'
 import { useState } from 'react'
 
-const ShoppingList = ( { cart, updateCart }) => {
+const ShoppingList = ({ cart, updateCart }) => {
   const [activeCategory, setActiveCategory] = useState('')
   const categories = plantList.reduce(
     (acc, plant) =>
